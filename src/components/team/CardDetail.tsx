@@ -27,14 +27,14 @@ const MotionCalendar = motion(Calendar);
 const MotionCode = motion(Code);
 
 const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, location, phone, joinDate, skills }) => {
-  const teamDetails: string[] = [name, role, email, github, location, phone, joinDate];
+  const teamDetails: string[] = [name, email, github, location, phone, joinDate];
 
-  const labelsDetails: string[] = ["Full Name", "Role", "Email", "Github", "Location", "Phone", "Join Date"];
+  const labelsDetails: string[] = ["Full Name", "Email", "Github", "Location", "Phone", "Join Date"];
 
   const iconsDetails: React.ReactNode[] = [
     <MotionUser key={1} className="w-5 h-5 mr-3" />,
-    <MotionGithub key={2} className="w-5 h-5 mr-3" />,
     <MotionMail key={3} className="w-5 h-5 mr-3" />,
+    <MotionGithub key={2} className="w-5 h-5 mr-3" />,
     <MotionPhone key={4} className="w-5 h-5 mr-3" />,
     <MotionMapPin key={5} className="w-5 h-5 mr-3" />,
     <MotionCalendar key={6} className="w-5 h-5 mr-3" />,
