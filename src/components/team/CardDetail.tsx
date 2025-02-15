@@ -1,6 +1,11 @@
-import { Calendar, Github, Mail, MapPin, Phone, User } from "lucide-react";
+"use client";
+
+import { Calendar, Code, Github, Mail, MapPin, Phone, User } from "lucide-react";
 import DecryptedText from "../Text/DecryptedText";
 import Link from "next/link";
+import { Flex } from "@radix-ui/themes";
+import SplitText from "../Text/SplitText";
+import { motion } from "framer-motion";
 
 type CardDetailProps = {
   name: string;
@@ -10,82 +15,85 @@ type CardDetailProps = {
   location: string;
   phone: string;
   joinDate: string;
+  skills: React.ReactNode[];
 };
 
-const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, location, phone, joinDate }) => {
+const MotionUser = motion(User);
+const MotionGithub = motion(Github);
+const MotionMail = motion(Mail);
+const MotionPhone = motion(Phone);
+const MotionMapPin = motion(MapPin);
+const MotionCalendar = motion(Calendar);
+const MotionCode = motion(Code);
+
+const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, location, phone, joinDate, skills }) => {
+  const teamDetails: string[] = [name, role, email, github, location, phone, joinDate];
+
+  const labelsDetails: string[] = ["Full Name", "Role", "Email", "Github", "Location", "Phone", "Join Date"];
+
+  const iconsDetails: React.ReactNode[] = [
+    <MotionUser key={1} className="w-5 h-5 mr-3" />,
+    <MotionGithub key={2} className="w-5 h-5 mr-3" />,
+    <MotionMail key={3} className="w-5 h-5 mr-3" />,
+    <MotionPhone key={4} className="w-5 h-5 mr-3" />,
+    <MotionMapPin key={5} className="w-5 h-5 mr-3" />,
+    <MotionCalendar key={6} className="w-5 h-5 mr-3" />,
+  ];
+
   return (
-    <div className="flex-grow rounded-2xl overflow-hidden w-[50rem]">
-      <div className="bg-zinc-900 border-zinc-800">
-        <div className="p-8 space-y-6">
+    <motion.div className="flex-grow rounded-2xl overflow-hidden w-[50rem] relative">
+      <motion.div className="bg-zinc-900 border-zinc-800">
+        <motion.div className="p-8 space-y-6">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold text-white">{name}</h1>
-            <p className="text-lg text-orange-400">{role}</p>
-          </div>
-
-          <div className="grid gap-6 pt-6 border-t border-zinc-800">
-            <div className="flex items-center text-zinc-400">
-              <User className="w-5 h-5 mr-3" />
-              <div>
-                <p className="text-sm text-zinc-500">Full Name</p>
-                <p className="text-white">
-                  <DecryptedText text={name} speed={100} maxIterations={20} animateOn="view" revealDirection="start" sequential />
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center text-zinc-400">
-              <Mail className="w-5 h-5 mr-3" />
-              <div>
-                <p className="text-sm text-zinc-500">Email</p>
-                <Link href={`mailto:${email}`} className="text-white hover:text-orange-400">
-                  <DecryptedText text={email} speed={100} maxIterations={20} animateOn="view" revealDirection="start" sequential />
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex items-center text-zinc-400">
-              <Github className="w-5 h-5 mr-3" />
-              <div>
-                <p className="text-sm text-zinc-500">Github</p>
-                <Link href={`https://${github}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-400">
-                  <DecryptedText text={github} speed={100} maxIterations={20} animateOn="view" revealDirection="start" sequential />
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex items-center text-zinc-400">
-              <MapPin className="w-5 h-5 mr-3" />
-              <div>
-                <p className="text-sm text-zinc-500">Location</p>
-                <p className="text-white">
-                  <DecryptedText text={location} speed={100} maxIterations={20} animateOn="view" revealDirection="start" sequential />
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center text-zinc-400">
-              <Phone className="w-5 h-5 mr-3" />
-              <div>
-                <p className="text-sm text-zinc-500">Phone</p>
-                <p className="text-white">
-                  <DecryptedText text={phone} speed={100} maxIterations={20} animateOn="view" revealDirection="start" sequential />
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center text-zinc-400">
-              <Calendar className="w-5 h-5 mr-3" />
-              <div>
-                <p className="text-sm text-zinc-500">Join Date</p>
-                <p className="text-white">
-                  <DecryptedText text={joinDate} speed={100} maxIterations={20} animateOn="view" revealDirection="start" sequential />
-                </p>
-              </div>
+            <motion.h1
+              initial={{
+                opacity: 0,
+                x: -100,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 1 },
+              }}
+              className="text-3xl font-semibold tracking-tight text-zinc-100"
+            >
+              {name}
+            </motion.h1>
+            <div>
+              <SplitText text={role} delay={100} className="text-lg text-orange-400" />
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+
+          <motion.div className="grid gap-6 pt-6 border-t border-zinc-800">
+            {teamDetails.map((detail, index) => (
+              <motion.div key={index} className="flex items-center text-zinc-400">
+                {iconsDetails[index]}
+                <motion.div>
+                  <p className="text-sm text-zinc-500">{labelsDetails[index]}</p>
+                  <p>
+                    <DecryptedText text={detail} speed={100} maxIterations={20} animateOn="view" revealDirection="start" sequential />
+                  </p>
+                </motion.div>
+              </motion.div>
+            ))}
+
+            <motion.div className="flex items-center text-zinc-400">
+              <MotionCode className="w-5 h-5 mr-3" />
+              <motion.div>
+                <p className="text-sm text-zinc-500">Skills</p>
+                <Flex gap="1" className="flex-wrap">
+                  {skills.map((skill, index) => (
+                    <Flex gap="1" align="center" key={index} className="p-2">
+                      {skill}
+                    </Flex>
+                  ))}
+                </Flex>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
