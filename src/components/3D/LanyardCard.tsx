@@ -11,7 +11,7 @@ extend({ MeshLineGeometry, MeshLineMaterial })
 useGLTF.preload('/glb/mufid-card.glb')
 useTexture.preload('/Coding-with-Mufid.png')
 
-export default function Card3D() {
+export default function LanyardCard() {
 
   return (
     <Canvas camera={{ position: [0, 0, 15], fov: 20 }} style={{ height: 700 }}>
