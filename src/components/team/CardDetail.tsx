@@ -1,13 +1,13 @@
 "use client";
 
-import { Code, Github, Mail, MapPin, Phone, User } from "lucide-react";
 import DecryptedText from "../Text/DecryptedText";
-import { Flex } from "@radix-ui/themes";
 import SplitText from "../Text/SplitText";
-import { motion, MotionProps, useAnimation, useInView, Variants } from "framer-motion";
-import { HTMLAttributes, useRef, useState } from "react";
-import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 import Tooltip from "../ui/Tooltip";
+import { Flex } from "@radix-ui/themes";
+import { Code, Github, Mail, MapPin, Phone, User } from "lucide-react";
+import { motion, useAnimation, useInView, Variants } from "framer-motion";
+import { useRef, useState } from "react";
+import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 
 type CardDetailProps = {
   name: string;
@@ -152,15 +152,18 @@ const MotionMapPin = motion(MapPin);
 const MotionCode = motion(Code);
 
 const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, location, phone, skills }) => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   const ctrls = useAnimation();
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   useIsomorphicLayoutEffect(() => {
     if (isInView) {
       ctrls.start("visible");
+      if (!isLoaded) setTimeout(() => setIsLoaded(true), 2000);
     } else {
       ctrls.start("hidden");
+      setIsLoaded(false);
     }
   }, [isInView, ctrls]);
 
@@ -194,7 +197,7 @@ const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, loca
                     {labelsDetails[index]}
                   </motion.p>
                   <motion.p variants={textVariants} className="cursor-pointer">
-                    {isInView && <DecryptedText text={detail} speed={100} maxIterations={50} animateOn="hover" revealDirection="start" />}
+                    {isInView && <DecryptedText text={detail} speed={isLoaded ? 200 : 100} maxIterations={50} animateOn={isLoaded ? "hover" : "view"} revealDirection="start" />}
                   </motion.p>
                 </motion.div>
               </motion.div>

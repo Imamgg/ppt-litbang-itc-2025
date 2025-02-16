@@ -24,10 +24,10 @@ type TeamSectionProps = {
 
 const TeamSection: React.FC<TeamSectionProps> = ({ team }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef);
+  const isInView = useInView(containerRef, { amount: 0.5 });
 
   return (
-    <Flex ref={containerRef} align="center" className="py-20 bg-white">
+    <Flex ref={containerRef} align="center" className="bg-white min-h-screen snap-start">
       <Box className="w-1/2">{isInView && <LanyardCard />}</Box>
       <Flex direction="column" className="w-1/2">
         <CardDetail {...team} />
