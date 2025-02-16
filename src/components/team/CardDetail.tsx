@@ -5,9 +5,9 @@ import DecryptedText from "../Text/DecryptedText";
 import { Flex } from "@radix-ui/themes";
 import SplitText from "../Text/SplitText";
 import { motion, useAnimation, useInView, Variants } from "framer-motion";
-import { Tooltip } from "radix-ui";
 import { useRef, useState } from "react";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
+import Tooltip from "../ui/Tooltip";
 
 type CardDetailProps = {
   name: string;
@@ -31,9 +31,69 @@ const containerVariants: Variants = {
     opacity: 1,
     x: 0,
     transition: {
+      when: "beforeChildren",
+      duration: 1,
+      staggerChildren: 0.2,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const iconsVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
       duration: 1,
     },
   },
+};
+
+const labelsVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const textVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const skillsVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      delay: i * 0.2,
+    },
+  }),
 };
 
 const MotionUser = motion(User);
@@ -101,37 +161,35 @@ const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, loca
 
           <motion.div className="grid gap-6 pt-6 border-t border-zinc-800">
             {teamDetails.map((detail, index) => (
-              <motion.div key={index} className="flex items-center text-zinc-400">
+              <motion.div variants={iconsVariants} key={index} className="flex items-center text-zinc-400">
                 {iconsDetails[index]}
                 <motion.div>
-                  <p className="text-sm text-zinc-500">{labelsDetails[index]}</p>
-                  <p className="cursor-pointer">
+                  <motion.p variants={labelsVariants} className="text-sm text-zinc-500">
+                    {labelsDetails[index]}
+                  </motion.p>
+                  <motion.p variants={textVariants} className="cursor-pointer">
                     <DecryptedText text={detail} speed={100} maxIterations={20} animateOn={isLoaded ? "hover" : "view"} revealDirection="start" sequential />
-                  </p>
+                  </motion.p>
                 </motion.div>
               </motion.div>
             ))}
 
-            <motion.div className="flex items-center text-zinc-400">
+            <motion.div variants={iconsVariants} className="flex items-center text-zinc-400">
               <MotionCode className="w-5 h-5 mr-3" />
               <motion.div>
-                <p className="text-sm text-zinc-500">Skills</p>
-                <Flex gap="3" className="flex-wrap">
+                <motion.p variants={labelsVariants} className="text-sm text-zinc-500">
+                  Skills
+                </motion.p>
+                <Flex gap="3">
                   {skills.map((skill, index) => (
-                    <Tooltip.Provider key={index} delayDuration={300}>
-                      <Tooltip.Root>
-                        <Tooltip.Trigger>{skill.icon}</Tooltip.Trigger>
-                        <Tooltip.Portal>
-                          <Tooltip.Content
-                            className="select-none rounded bg-white px-[15px] py-2.5 text-[15px] leading-none text-violet11 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity] data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade"
-                            sideOffset={5}
-                          >
-                            {skill.name}
-                            <Tooltip.Arrow className="fill-white" />
-                          </Tooltip.Content>
-                        </Tooltip.Portal>
-                      </Tooltip.Root>
-                    </Tooltip.Provider>
+                    <Tooltip 
+                      key={index} 
+                      icon={skill.icon} 
+                      content={skill.name} 
+                      side="bottom" 
+                      className="bg-orange-400 fill-orange-400" 
+                      variants={skillsVariants} 
+                    />
                   ))}
                 </Flex>
               </motion.div>
