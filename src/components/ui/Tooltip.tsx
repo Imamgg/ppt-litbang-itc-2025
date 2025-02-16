@@ -21,7 +21,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   variants,
 }) => {
   return (
-    <motion.div className="m-1" variants={variants}>
+    <motion.div className="m-1 flex justify-center" variants={variants}>
       <RadixTooltip.Provider delayDuration={delayDuration}>
         <RadixTooltip.Root>
           <RadixTooltip.Trigger>{icon}</RadixTooltip.Trigger>
@@ -32,7 +32,7 @@ const Tooltip: React.FC<TooltipProps> = ({
               side={side}
             >
               {content}
-              <RadixTooltip.Arrow className={className} />
+              <RadixTooltip.Arrow className="fill-orange-400" />
             </RadixTooltip.Content>
           </RadixTooltip.Portal>
         </RadixTooltip.Root>

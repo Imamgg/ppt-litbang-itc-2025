@@ -20,7 +20,7 @@ type CardDetailProps = {
     name: string;
     icon: React.ReactNode;
   }[];
-} & HTMLAttributes<MotionProps>;
+};
 
 const containerVariants: Variants = {
   hidden: {
@@ -152,22 +152,17 @@ const MotionMapPin = motion(MapPin);
 const MotionCode = motion(Code);
 
 const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, location, phone, skills }) => {
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   const ctrls = useAnimation();
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   useIsomorphicLayoutEffect(() => {
     if (isInView) {
       ctrls.start("visible");
-      if (!isLoaded) {
-        setTimeout(() => setIsLoaded(true), 2000);
-      }
     } else {
       ctrls.start("hidden");
-      if (isLoaded) setIsLoaded(false);
     }
-  }, [isInView, ctrls, isLoaded]);
+  }, [isInView, ctrls]);
 
   const teamDetails: string[] = [name, email, github, location, phone];
   const labelsDetails: string[] = ["Full Name", "Email", "Github", "Location", "Phone"];
@@ -175,8 +170,8 @@ const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, loca
     <MotionUser key={1} className="w-5 h-5 mr-3" />,
     <MotionMail key={3} className="w-5 h-5 mr-3" />,
     <MotionGithub key={2} className="w-5 h-5 mr-3" />,
-    <MotionMapPin key={5} className="w-5 h-5 mr-3" />,
     <MotionPhone key={4} className="w-5 h-5 mr-3" />,
+    <MotionMapPin key={5} className="w-5 h-5 mr-3" />,
   ];
 
   return (
@@ -199,7 +194,7 @@ const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, loca
                     {labelsDetails[index]}
                   </motion.p>
                   <motion.p variants={textVariants} className="cursor-pointer">
-                    {isInView && <DecryptedText text={detail} speed={isLoaded ? 200 : 100} maxIterations={isLoaded ? 50 : 10} animateOn={isLoaded ? "hover" : "view"} revealDirection="start" />}
+                    {isInView && <DecryptedText text={detail} speed={100} maxIterations={50} animateOn="hover" revealDirection="start" />}
                   </motion.p>
                 </motion.div>
               </motion.div>
