@@ -173,8 +173,8 @@ const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, loca
     <MotionUser key={1} className="w-5 h-5 mr-3" />,
     <MotionMail key={3} className="w-5 h-5 mr-3" />,
     <MotionGithub key={2} className="w-5 h-5 mr-3" />,
-    <MotionPhone key={4} className="w-5 h-5 mr-3" />,
     <MotionMapPin key={5} className="w-5 h-5 mr-3" />,
+    <MotionPhone key={4} className="w-5 h-5 mr-3" />,
   ];
 
   return (

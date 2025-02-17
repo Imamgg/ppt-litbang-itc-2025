@@ -19,6 +19,7 @@ type TeamSectionProps = {
       name: string;
       icon: React.ReactNode;
     }[];
+    gltf: string;
   };
 };
 
@@ -27,8 +28,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ team }) => {
   const isInView = useInView(containerRef, { amount: 0.5 });
 
   return (
-    <Flex ref={containerRef} align="center" className="bg-white min-h-screen snap-start">
-      <Box className="w-1/2">{isInView && <LanyardCard />}</Box>
+    <Flex ref={containerRef} align="center" className="min-h-screen snap-start">
+      <Box className="w-1/2">{isInView && <LanyardCard gltf={team.gltf} />}</Box>
       <Flex direction="column" className="w-1/2">
         <CardDetail {...team} />
       </Flex>
