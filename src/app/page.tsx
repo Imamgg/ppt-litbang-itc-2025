@@ -12,8 +12,31 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiBun, SiCss3, SiDart, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiNestjs, SiNextdotjs, SiReact, SiTypescript } from "react-icons/si";
 import Lottie from "lottie-react";
 import technology from "../components/lottie/technology.json"
+import { motion } from "framer-motion";
+import { TypewriterEffect } from "../components/Text/TypewriterEffect";
 
 export default function HomePage() {
+
+  const words = [
+    {
+      text: "Rancangan",
+    },
+    {
+      text: "Kerja",
+    },
+    {
+      text: "Divisi",
+      className: "text-[#6894b9] dark:text-[#6894b9]",
+    },
+    {
+      text: "Litbang",
+      className: "text-[#6894b9] dark:text-[#6894b9]",
+    },
+    {
+      text: "2025",
+    },
+  ]
+
   return (
     <div className="snap-y snap-mandatory">
       <Section className="w-full h-screen overflow-hidden relative snap-start">
@@ -62,10 +85,14 @@ export default function HomePage() {
         />
       </Section>
       <Flex className="w-full h-screen snap-start px-20" align="center" justify="between">
-        <h1>Rancangan Kerja Divisi Litbang 2025</h1>
-        <div className="w-1/3">
+        <TypewriterEffect words={words} />
+        <motion.div
+        className="w-1/3"
+        initial={{ opacity: 0, scale: 0.5, translateY: 100}}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, scale: 1, translateY: 0 }}>
           <Lottie animationData={technology} loop={true}></Lottie>
-        </div>
+        </motion.div>
       </Flex>
       {teams.map((team, index) =>
         <TeamSection team={team} key={index} />
