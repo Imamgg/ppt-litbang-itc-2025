@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${poppins.className || "font-sans"} dark:bg-[#1a1a1a] bg-white overflow-x-hidden`}>
+      <body className={`${poppins.className || "font-sans"} dark:bg-black bg-white overflow-x-hidden`}>
         <Theme>{children}</Theme>
       </body>
     </html>

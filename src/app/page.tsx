@@ -2,23 +2,24 @@
 
 import Hyperspeed from "@/components/background/HyperSpeed";
 import TeamSection from "@/components/team/TeamSection";
+import BlurText from "@/components/Text/BlurText";
+import PixelCard from "@/components/ui/PixelCard";
 import { cn } from "@/lib/utils";
 import { Flex, Section } from "@radix-ui/themes";
 import { FaPython, FaVuejs } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiBun, SiCss3, SiDart, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiNestjs, SiNextdotjs, SiReact, SiTypescript } from "react-icons/si";
+import Lottie from "lottie-react";
+import technology from "../components/lottie/technology.json"
 
 export default function HomePage() {
-
   return (
     <div className="snap-y snap-mandatory">
       <Section className="w-full h-screen overflow-hidden relative snap-start">
-        <Flex direction="column" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-[5em] font-semibold text-neutral-800">WE ARE</h1>
-          <h1 className="text-[5em] font-semibold text-neutral-800">LITBANG</h1>
-          <h1 className="text-[5em] font-semibold text-neutral-800">UKM-FT</h1>
-          <h1 className="text-[5em] font-semibold text-neutral-800">ITC 2025</h1>
+        <Flex direction="column" align="center" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <BlurText delay={50} animateBy="letters" className="text-[5em] font-semibold text-white text-center" text="We Are Litbang" />
+          <BlurText animateBy="letters" delay={200} className="text-[5em] font-semibold text-white text-center" text="UKM-FT ITC 2025" />
         </Flex>
         <Hyperspeed
           effectOptions={{
@@ -60,9 +61,20 @@ export default function HomePage() {
           }}
         />
       </Section>
-      {teams.map((team, index) => (
+      <Flex className="w-full h-screen snap-start px-20" align="center" justify="between">
+        <h1>Rancangan Kerja Divisi Litbang 2025</h1>
+        <div className="w-1/3">
+          <Lottie animationData={technology} loop={true}></Lottie>
+        </div>
+      </Flex>
+      {teams.map((team, index) =>
         <TeamSection team={team} key={index} />
-      ))}
+      )}
+      <Flex className="w-full h-screen snap-start p-4">
+        <PixelCard variant="pink" className="w-full h-full" speed={100} colors="white">
+          // your card content (use position: absolute)
+        </PixelCard>
+      </Flex>
     </div>
   );
 }
