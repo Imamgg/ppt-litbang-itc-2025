@@ -7,7 +7,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 
-type TeamSectionProps = {
+type TeamProps = {
   team: {
     name: string;
     role: string;
@@ -23,7 +23,7 @@ type TeamSectionProps = {
   };
 };
 
-const TeamSection: React.FC<TeamSectionProps> = ({ team }) => {
+const Team: React.FC<TeamProps> = ({ team }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { amount: 0.5 });
 
@@ -37,4 +37,4 @@ const TeamSection: React.FC<TeamSectionProps> = ({ team }) => {
   );
 };
 
-export default TeamSection;
+export default Team;
