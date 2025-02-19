@@ -14,6 +14,7 @@ import Lottie from "lottie-react";
 import technology from "../components/lottie/technology.json"
 import { motion } from "framer-motion";
 import { TypewriterEffect } from "../components/Text/TypewriterEffect";
+import BounceCards from "@/components/ui/BounceCards";
 
 export default function HomePage() {
 
@@ -36,6 +37,22 @@ export default function HomePage() {
       text: "2025",
     },
   ]
+
+  const images = [
+    "https://picsum.photos/400/400?grayscale",
+    "https://picsum.photos/500/500?grayscale",
+    "https://picsum.photos/600/600?grayscale",
+    "https://picsum.photos/700/700?grayscale",
+    "https://picsum.photos/300/300?grayscale"
+  ];
+  
+  const transformStyles = [
+    "rotate(5deg) translate(-150px)",
+    "rotate(0deg) translate(-70px)",
+    "rotate(-5deg)",
+    "rotate(5deg) translate(70px)",
+    "rotate(-5deg) translate(150px)"
+  ];
 
   return (
     <div className="snap-y snap-mandatory">
@@ -93,6 +110,19 @@ export default function HomePage() {
           whileInView={{ opacity: 1, scale: 1, translateY: 0 }}>
           <Lottie animationData={technology} loop={true}></Lottie>
         </motion.div>
+      </Flex>
+      <Flex className="w-full h-screen snap-start">
+        <BounceCards
+        className="custom-bounceCards"
+        images={images}
+        containerWidth={500}
+        containerHeight={250}
+        animationDelay={1}
+        animationStagger={0.08}
+        easeType="elastic.out(1, 0.5)"
+        transformStyles={transformStyles}
+        enableHover={false}
+        />
       </Flex>
       {teams.map((team, index) =>
         <TeamSection team={team} key={index} />
