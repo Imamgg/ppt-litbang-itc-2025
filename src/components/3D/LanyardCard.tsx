@@ -6,6 +6,7 @@ import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, Environment, Lightformer } from "@react-three/drei";
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload("/glb/Maulana.glb");
@@ -48,7 +49,7 @@ function Band({ maxSpeed = 50, minSpeed = 10, gltf = "/glb/Mufid.glb" }) {
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
   useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]) // prettier-ignore
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof window !== "undefined") {
       if (hovered) {
         document.body.style.cursor = dragged ? "grabbing" : "grab";
