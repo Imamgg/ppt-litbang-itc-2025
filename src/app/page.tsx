@@ -10,6 +10,7 @@ import BounceCards from "@/components/ui/BounceCards";
 import TeamSection from "@/components/section/TeamSection";
 import Jumbotron from "@/components/section/Jumbotron";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
+import Proker from "@/components/section/Proker";
 
 export default function HomePage() {
   const words = [
@@ -65,6 +66,7 @@ export default function HomePage() {
         </PixelCard>
       </Flex> */}
       <WebTimelineSection />
+      <Proker />
     </div>
   );
 }
