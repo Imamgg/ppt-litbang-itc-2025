@@ -36,7 +36,7 @@ export default function HomePage() {
   return (
     <div className="snap-y snap-mandatory">
       <Suspense fallback={<>Loading ...</>}>
-        <Jumbotron />
+      <Jumbotron />
       </Suspense>
       <Flex className="w-full h-screen snap-start px-20" align="center" justify="between">
         <TypewriterEffect words={words} cursorClassName="bg-[#6894b9]" />
