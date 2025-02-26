@@ -9,7 +9,7 @@ import { TypewriterEffect } from "../components/Text/TypewriterEffect";
 import TeamSection from "@/components/section/TeamSection";
 import Jumbotron from "@/components/section/Jumbotron";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
-import IntroductionSection from "@/components/section/IntroductionSection";
+import Proker from "@/components/section/Proker";
 
 export default function HomePage() {
   const words = [
@@ -32,8 +32,6 @@ export default function HomePage() {
     },
   ];
 
-
-
   return (
     <div className="snap-y snap-mandatory">
       <Jumbotron />
@@ -43,7 +41,7 @@ export default function HomePage() {
           <Lottie animationData={technology} loop={true}></Lottie>
         </motion.div>
       </Flex>
-      <IntroductionSection />
+      {/* <IntroductionSection /> */}
       <TeamSection />
       {/* <Flex className="w-full h-screen snap-start p-4">
         <PixelCard variant="pink" className="w-full h-full" speed={100} colors="white">
@@ -51,6 +49,7 @@ export default function HomePage() {
         </PixelCard>
       </Flex> */}
       <WebTimelineSection />
+      <Proker />
     </div>
   );
 }
