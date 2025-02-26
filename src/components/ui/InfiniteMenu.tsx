@@ -1,8 +1,5 @@
-"use client"
-
 import { FC, useRef, useState, useEffect, MutableRefObject } from "react";
 import { mat4, quat, vec2, vec3 } from "gl-matrix";
-import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 
 // -------- Shader Sources --------
 
@@ -1288,7 +1285,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
   const [activeItem, setActiveItem] = useState<MenuItem | null>(null);
   const [isMoving, setIsMoving] = useState<boolean>(false);
 
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     const canvas = canvasRef.current;
     let sketch: InfiniteGridMenu | null = null;
 
