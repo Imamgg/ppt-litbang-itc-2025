@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Timeline from "../ui/Timeline";
 import { motion } from "framer-motion";
