@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useInView } from "framer-motion";
 
 interface BounceCardsProps {
   className?: string;
@@ -30,6 +31,10 @@ export default function BounceCards({
   ],
   enableHover = false,
 }: BounceCardsProps) {
+
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref);
+
   useEffect(() => {
     gsap.fromTo(
       ".card",
@@ -41,7 +46,7 @@ export default function BounceCards({
         delay: animationDelay,
       }
     );
-  }, [animationDelay, animationStagger, easeType]);
+  }, [animationDelay, animationStagger, easeType, isInView]);
 
   const getNoRotationTransform = (transformStr: string): string => {
     const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
@@ -125,6 +130,7 @@ export default function BounceCards({
 
   return (
     <div
+      ref={ref}
       className={`relative flex items-center justify-center ${className}`}
       style={{
         width: containerWidth,
