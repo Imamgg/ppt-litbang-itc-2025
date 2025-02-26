@@ -1,6 +1,6 @@
 "use client";
 
-import PixelCard from "@/components/ui/PixelCard";
+// import PixelCard from "@/components/ui/PixelCard";
 import { Flex } from "@radix-ui/themes";
 import Lottie from "lottie-react";
 import technology from "../components/lottie/technology.json";
