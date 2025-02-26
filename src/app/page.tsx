@@ -10,6 +10,7 @@ import TeamSection from "@/components/section/TeamSection";
 import Jumbotron from "@/components/section/Jumbotron";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
 import Proker from "@/components/section/Proker";
+import { Suspense } from "react";
 
 export default function HomePage() {
   const words = [
@@ -34,7 +35,9 @@ export default function HomePage() {
 
   return (
     <div className="snap-y snap-mandatory">
-      <Jumbotron />
+      <Suspense fallback={<>Loading ...</>}>
+        <Jumbotron />
+      </Suspense>
       <Flex className="w-full h-screen snap-start px-20" align="center" justify="between">
         <TypewriterEffect words={words} cursorClassName="bg-[#6894b9]" />
         <motion.div className="w-1/3" initial={{ opacity: 0, scale: 0.5, translateY: 100 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, scale: 1, translateY: 0 }}>
