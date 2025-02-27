@@ -37,9 +37,9 @@ export default function HomePage() {
       {/* <Jumbotron /> */}
       <Flex className="w-full h-screen snap-start px-20" align="center" justify="between">
         {/* <TypewriterEffect words={words} cursorClassName="bg-[#6894b9]" /> */}
-        <motion.div className="w-1/3" initial={{ opacity: 0, scale: 0.5, translateY: 100 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, scale: 1, translateY: 0 }}>
+        {/* <motion.div className="w-1/3" initial={{ opacity: 0, scale: 0.5, translateY: 100 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, scale: 1, translateY: 0 }}>
           <Lottie animationData={technology} loop={true}></Lottie>
-        </motion.div>
+        </motion.div> */}
       </Flex>
       {/* <IntroductionSection /> */}
       {/* <TeamSection /> */}
