@@ -12,6 +12,7 @@ import WebTimelineSection from "@/components/section/WebTimelineSection";
 import Proker from "@/components/section/Proker";
 import { Suspense } from "react";
 
+
 export default function HomePage() {
   const words = [
     {
