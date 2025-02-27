@@ -12,6 +12,7 @@ import Jumbotron from "@/components/section/Jumbotron";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
 import Proker from "@/components/section/Proker";
 
+
 export default function HomePage() {
   const words = [
     {
