@@ -49,7 +49,7 @@ export default function HomePage() {
         </PixelCard>
       </Flex> */}
       <WebTimelineSection />
-      <Proker />
+      {/* <Proker /> */}
     </div>
   );
 }
