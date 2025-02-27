@@ -42,7 +42,7 @@ export default function HomePage() {
         </motion.div>
       </Flex>
       {/* <IntroductionSection /> */}
-      <TeamSection />
+      {/* <TeamSection /> */}
       {/* <Flex className="w-full h-screen snap-start p-4">
         <PixelCard variant="pink" className="w-full h-full" speed={100} colors="white">
           hover
