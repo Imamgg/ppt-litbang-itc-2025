@@ -1,5 +1,6 @@
 "use client";
 
+import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 import { useMotionValueEvent, useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -13,7 +14,7 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
