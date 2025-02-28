@@ -34,21 +34,22 @@ export default function HomePage() {
     <div className="snap-y snap-mandatory">
       <AnimatePresence>
         {isPresent && (
-          <motion.div
-            key="present"
-            exit={{
-              y: "100%",
-              opacity: 0,
-              transition: {
-                duration: 2,
-                type: "spring",
-                damping: 15,
-                stiffness: 100,
-              },
-            }}
-            className="snap-start w-full h-screen flex justify-center items-center"
-          >
-            <h1 className="list-item text-3xl">{presentText}</h1>
+          <motion.div className="snap-start w-full h-screen flex justify-center items-center">
+            <motion.h1
+              key="present"
+              exit={{
+                y: "100%",
+                transition: {
+                  duration: 2,
+                  type: "spring",
+                  damping: 15,
+                  stiffness: 100,
+                },
+              }}
+              className="list-item text-3xl"
+            >
+              {presentText}
+            </motion.h1>
           </motion.div>
         )}
       </AnimatePresence>
