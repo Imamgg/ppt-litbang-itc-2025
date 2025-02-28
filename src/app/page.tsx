@@ -1,55 +1,59 @@
 "use client";
 
-// import PixelCard from "@/components/ui/PixelCard";
-import { Flex } from "@radix-ui/themes";
-import Lottie from "lottie-react";
-import technology from "../components/lottie/technology.json";
-import { motion } from "framer-motion";
-import { TypewriterEffect } from "../components/Text/TypewriterEffect";
+import { AnimatePresence, motion } from "framer-motion";
 import TeamSection from "@/components/section/TeamSection";
-import Jumbotron from "@/components/section/Jumbotron";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
-import Proker from "@/components/section/Proker";
+import { useState } from "react";
+import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 
 export default function HomePage() {
-  const words = [
-    {
-      text: "Rancangan",
-    },
-    {
-      text: "Kerja",
-    },
-    {
-      text: "Divisi",
-      className: "text-[#6894b9] dark:text-[#6894b9]",
-    },
-    {
-      text: "Litbang",
-      className: "text-[#6894b9] dark:text-[#6894b9]",
-    },
-    {
-      text: "2025",
-    },
-  ];
+  const [isPresent, setIspresent] = useState<boolean>(true);
+  const [presentText, setPresentText] = useState<string>("HELLO");
+  const texts = ["WEBSITE", "LOMBA", "PENELITIAN", "PENGEMBANGAN", "WEBSITE", "LOMBA", "PENELITIAN", "PENGEMBANGAN", "LITBANG"];
+  const setText = (text: string) => {
+    setPresentText(text);
+  };
+
+  useIsomorphicLayoutEffect(() => {
+    let i = 0;
+    const intervalId = setInterval(() => {
+      if (i < texts.length) {
+        setText(texts[i]);
+        i++;
+      } else {
+        setIspresent(false);
+      }
+    }, 150);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <div className="snap-y snap-mandatory">
-      <Jumbotron />
-      <Flex className="w-full h-screen snap-start px-20" align="center" justify="between">
-        {/* <TypewriterEffect words={words} cursorClassName="bg-[#6894b9]" /> */}
-        {/* <motion.div className="w-1/3" initial={{ opacity: 0, scale: 0.5, translateY: 100 }} transition={{ duration: 1 }} whileInView={{ opacity: 1, scale: 1, translateY: 0 }}>
-          <Lottie animationData={technology} loop={true}></Lottie>
-        </motion.div> */}
-      </Flex>
-      {/* <IntroductionSection /> */}
+      <AnimatePresence>
+        {isPresent && (
+          <motion.div
+            key="present"
+            exit={{
+              y: "100%",
+              opacity: 0,
+              transition: {
+                duration: 2,
+                type: "spring",
+                damping: 15,
+                stiffness: 100,
+              },
+            }}
+            className="snap-start w-full h-screen flex justify-center items-center"
+          >
+            <h1 className="list-item text-3xl">{presentText}</h1>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <TeamSection />
-      {/* <Flex className="w-full h-screen snap-start p-4">
-        <PixelCard variant="pink" className="w-full h-full" speed={100} colors="white">
-          hover
-        </PixelCard>
-      </Flex> */}
       <WebTimelineSection />
-      <Proker />
     </div>
   );
 }

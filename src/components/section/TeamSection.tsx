@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { FaPython, FaVuejs } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
