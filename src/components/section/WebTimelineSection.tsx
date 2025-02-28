@@ -273,7 +273,7 @@ const WebTimelineSection: React.FC = () => {
   ];
 
   return (
-    <motion.div className="snap-start">
+    <motion.div className="">
       <Timeline data={data} />
     </motion.div>
   );
