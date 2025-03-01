@@ -5,11 +5,11 @@ import TeamSection from "@/components/section/TeamSection";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
 import { useState } from "react";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
-import { BoxReveal } from "@/registry/magicui/BoxReveal";
-import { VelocityScroll } from "@/registry/magicui/VelocityScroll";
-import { IconCloud } from "@/registry/magicui/IconCloud";
+import VelocityScroll from "@/components/registry/magicui/VelocityScroll";
+import { IconCloud } from "@/components/registry/magicui/IconCloud";
+import { ProkerSection } from "@/components/section/ProkerSection";
 
-const slugs = [
+const slugs: string[] = [
   "typescript",
   "javascript",
   "dart",
@@ -44,8 +44,8 @@ const slugs = [
 
 export default function HomePage() {
   const [isPresent, setIspresent] = useState<boolean>(true);
-  const [presentText, setPresentText] = useState<string>("HELLO");
-  const texts = ["WEBSITE", "LOMBA", "PENELITIAN", "PENGEMBANGAN", "WEBSITE", "LOMBA", "PENELITIAN", "PENGEMBANGAN", "LITBANG"];
+  const [presentText, setPresentText] = useState<string>("HELLO 👋");
+  const texts: string[] = ["WEBSITE 🌐", "LOMBA 🎮", "PENELITIAN 🧪", "WEBSITE 🌐", "LOMBA 🎮", "PENELITIAN 🧪", "LITBANG"];
   const setText = (text: string) => {
     setPresentText(text);
   };
@@ -91,24 +91,16 @@ export default function HomePage() {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="snap-start flex flex-col overflow-x-hidden items-center justify-center relative px-10">
-        <div className="w-full h-2/3 flex items-end justify-center gap-10 py-32">
-          {/* <div>
-            <BoxReveal boxColor="#5046e6" duration={0.5}>
-              <h1 className="text-6xl font-bold">RANCANGAN KERJA</h1>
-            </BoxReveal>
-            <BoxReveal boxColor="#5046e6" duration={0.5}>
-              <h1 className="text-6xl font-bold">DIVISI LITBANG</h1>
-            </BoxReveal>
-            <BoxReveal boxColor="#5046e6" duration={0.5}>
-              <h1 className="text-6xl font-bold">UKM-FT ITC 2025</h1>
-            </BoxReveal>
-          </div> */}
+      <div className="snap-start flex flex-col overflow-x-hidden items-center justify-center relative w-full">
+        <div className="w-full h-2/3 flex items-end justify-center gap-10 py-24">
           <IconCloud images={images} />
         </div>
-        <div className="flex items-end">
-          <VelocityScroll baseVelocity={-2}>LITBANG</VelocityScroll>
+        <div className="flex items-end w-full">
+          <VelocityScroll texts={["DIVISI", "LITBANG"]} velocity={10} parallaxClassName="w-full" scrollerClassName="w-full" numCopies={30} />
         </div>
+      </div>
+      <div className="w-full h-screen snap-start flex justify-center items-center">
+        <ProkerSection />
       </div>
       <TeamSection />
       <WebTimelineSection />
