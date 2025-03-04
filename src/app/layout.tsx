@@ -4,6 +4,7 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import SplashCursor from "@/components/ui/SplashCursor";
+import Navbar from "@/components/section/Navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${poppins.className || "font-sans"} dark:bg-black bg-white overflow-x-hidden`}>
+      <body className={`${poppins.className || "font-sans"} dark:bg-neutral-950 bg-white overflow-x-hidden`}>
+        <Navbar />
         <Theme>{children}</Theme>
         <SplashCursor />
       </body>

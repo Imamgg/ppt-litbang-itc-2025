@@ -8,6 +8,7 @@ import { motion, useAnimation, useInView, Variants } from "framer-motion";
 import { Box } from "@radix-ui/themes";
 import { BorderBeam } from "../registry/magicui/BorderBeam";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
+import DynamicCurvedArrow from "../Arrow/DynamicCurvedArrow";
 
 const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React.ReactNode }>(({ className, children }, ref) => {
   return (
@@ -21,12 +22,12 @@ Circle.displayName = "Circle";
 
 const SvgVariants: Variants = {
   hidden: {
-    width: 0,
+    pathLength: 0,
   },
   visible: {
-    width: "100%",
+    pathLength: 1,
     transition: {
-      duration: 1,
+      duration: 1.5,
       type: "spring",
       damping: 10,
       stiffness: 100,
@@ -60,7 +61,7 @@ export function ProkerSection() {
   const div5Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { amount: 0.5 });
+  const isInView = useInView(containerRef);
   const ctrls = useAnimation();
 
   useIsomorphicLayoutEffect(() => {
@@ -76,20 +77,14 @@ export function ProkerSection() {
       <div className="flex size-full max-w-3xl flex-col items-stretch justify-between gap-20">
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div1Ref} className="relative">
-            <motion.svg variants={SvgVariants} animate={ctrls} className="absolute -bottom-10 -left-20 -rotate-45" width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-              <path d="M80 30 Q 40 10, 10 30" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M10 30 L 20 20 M10 30 L 20 40" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            </motion.svg>
-            <motion.span variants={SpanVariants} animate={ctrls} className="absolute -bottom-20 -left-20">
+            <DynamicCurvedArrow direction="left" variants={SvgVariants} animate={ctrls} className="absolute -bottom-10 -left-24 -rotate-45" />
+            <motion.span variants={SpanVariants} animate={ctrls} className="absolute -bottom-16 -left-24">
               Website
             </motion.span>
             <Icons.website />
           </Circle>
           <Circle ref={div5Ref} className="relative">
-            <motion.svg variants={SvgVariants} animate={ctrls} className="absolute -bottom-16 -right-14" width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 20 Q 50 55, 90 20" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M90 20 L 80 10 M90 20 L 80 30" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            </motion.svg>
+            <DynamicCurvedArrow length={80} variants={SvgVariants} animate={ctrls} className="absolute top-0 -right-28 rotate-12" />
             <motion.span variants={SpanVariants} animate={ctrls} className="absolute -bottom-10 -right-36 w-20">
               Fasilitator Study Club
             </motion.span>
@@ -105,21 +100,15 @@ export function ProkerSection() {
         </div>
         <div className="flex flex-row justify-between">
           <Circle ref={div3Ref} className="relative">
-            <motion.svg variants={SvgVariants} animate={ctrls} className="absolute -left-20 bottom-20 rotate-180" width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 20 Q 50 55, 90 20" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M90 20 L 80 10 M90 20 L 80 30" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            </motion.svg>
-            <motion.span variants={SpanVariants} animate={ctrls} className="absolute -left-40">
+            <DynamicCurvedArrow variants={SvgVariants} animate={ctrls} className="absolute -left-28 bottom-0 rotate-180" />
+            <motion.span variants={SpanVariants} animate={ctrls} className="absolute -left-40 -top-5">
               Perlombaan
             </motion.span>
             <Icons.perlombaan />
           </Circle>
           <Circle ref={div7Ref} className="relative">
-            <motion.svg variants={SvgVariants} animate={ctrls} className="absolute -right-28 rotate-12" width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 30 Q 50 10, 80 30" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M80 30 L 70 20 M80 30 L 70 40" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-            </motion.svg>
-            <motion.span variants={SpanVariants} animate={ctrls} className="absolute -right-44">
+            <DynamicCurvedArrow length={80} variants={SvgVariants} animate={ctrls} className="absolute -right-28 rotate-12" />
+            <motion.span variants={SpanVariants} animate={ctrls} className="absolute -right-44 bottom-0">
               Penelitian
             </motion.span>
             <Icons.penelitian />
