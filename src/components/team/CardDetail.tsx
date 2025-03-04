@@ -197,7 +197,7 @@ const CardDetail: React.FC<CardDetailProps> = ({ name, role, email, github, loca
                     {labelsDetails[index]}
                   </motion.p>
                   <motion.p variants={textVariants} className="cursor-pointer">
-                    {isInView && <DecryptedText text={detail} speed={isLoaded ? 200 : 100} maxIterations={50} animateOn={isLoaded ? "hover" : "view"} revealDirection="start" />}
+                    {isInView && <DecryptedText text={detail} speed={isLoaded ? 200 : 100} maxIterations={40} animateOn={isLoaded ? "hover" : "view"} revealDirection="start" />}
                   </motion.p>
                 </motion.div>
               </motion.div>

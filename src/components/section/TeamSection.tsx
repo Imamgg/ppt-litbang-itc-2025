@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { FaPython, FaVuejs } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
@@ -44,7 +46,7 @@ const teams = [
         icon: <RiTailwindCssFill className={cn(baseStyleIcon, "hover:text-sky-400")} key={8} />,
       },
     ],
-    gltf: "/glb/Mufid.glb",
+    gltf: "/glb/Maulana.glb",
   },
   {
     name: "Ahmad Mufid Risqi",
@@ -196,6 +198,6 @@ const teams = [
         icon: <IoLogoNodejs className={cn(baseStyleIcon, "hover:text-green-600")} key={6} />,
       },
     ],
-    gltf: "/glb/Fuady.glb",
+    gltf: "/glb/Fuad.glb",
   },
 ];

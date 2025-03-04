@@ -6,13 +6,15 @@ import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, Environment, Lightformer } from "@react-three/drei";
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
+useGLTF.preload("/glb/Maulana.glb");
 useGLTF.preload("/glb/Mufid.glb");
 useGLTF.preload("/glb/Wildan.glb");
-useGLTF.preload("/glb/Fuady.glb");
+useGLTF.preload("/glb/Fuad.glb");
 useGLTF.preload("/glb/Imam.glb");
-useTexture.preload("/Coding-with-Mufid.png");
+useTexture.preload("/litbang.jpg");
 
 export default function LanyardCard({ gltf = "/glb/Mufid.glb" }) {
   return (
@@ -36,7 +38,7 @@ function Band({ maxSpeed = 50, minSpeed = 10, gltf = "/glb/Mufid.glb" }) {
   const vec: any = new THREE.Vector3(), ang: any = new THREE.Vector3(), rot: any = new THREE.Vector3(), dir: any = new THREE.Vector3() // prettier-ignore
   const segmentProps: any = { type: "dynamic", canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 };
   const { nodes, materials }: any = useGLTF(gltf);
-  const texture: any = useTexture("/Coding-with-Mufid.png");
+  const texture: any = useTexture("/litbang.jpg");
   const { width, height }: any = useThree((state) => state.size);
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
   const [dragged, drag]: any = useState(false);
@@ -47,7 +49,7 @@ function Band({ maxSpeed = 50, minSpeed = 10, gltf = "/glb/Mufid.glb" }) {
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
   useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]) // prettier-ignore
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof window !== "undefined") {
       if (hovered) {
         document.body.style.cursor = dragged ? "grabbing" : "grab";

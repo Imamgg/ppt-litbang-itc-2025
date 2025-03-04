@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Timeline from "../ui/Timeline";
 import { motion } from "framer-motion";
@@ -271,7 +273,7 @@ const WebTimelineSection: React.FC = () => {
   ];
 
   return (
-    <motion.div className="snap-start">
+    <motion.div className="">
       <Timeline data={data} />
     </motion.div>
   );

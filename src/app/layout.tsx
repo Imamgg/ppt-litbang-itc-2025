@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import SplashCursor from "@/components/ui/SplashCursor";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,11 +17,6 @@ export const metadata: Metadata = {
 };
 
 
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,6 +26,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${poppins.className || "font-sans"} dark:bg-black bg-white overflow-x-hidden`}>
         <Theme>{children}</Theme>
+        <SplashCursor />
       </body>
     </html>
   );
