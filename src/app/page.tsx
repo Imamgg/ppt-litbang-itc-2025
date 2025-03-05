@@ -7,7 +7,6 @@ import { IconCloud } from "@/components/registry/magicui/IconCloud";
 import { ProkerSection } from "@/components/section/ProkerSection";
 import AnimatedPresentSection from "@/components/section/AnimatedPresentSection";
 import DivisiSection from "@/components/section/DivisiSection";
-import Proker from "@/components/section/Proker";
 
 const slugs: string[] = [
   "typescript",
@@ -49,7 +48,6 @@ export default function HomePage() {
 
   return (
     <div className="snap-y snap-mandatory">
-      
       <AnimatedPresentSection />
       <div className="snap-start flex flex-col overflow-x-hidden items-center justify-center relative w-full">
         <div className="w-full h-2/3 flex items-end justify-center gap-10 py-24">
@@ -65,8 +63,6 @@ export default function HomePage() {
         <ProkerSection />
       </div>
       <TeamSection />
-      <WebTimelineSection />
-      <Proker />
     </div>
   );
 }

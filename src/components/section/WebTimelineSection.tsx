@@ -4,7 +4,11 @@ import Image from "next/image";
 import Timeline from "../ui/Timeline";
 import { motion } from "framer-motion";
 
-const WebTimelineSection: React.FC = () => {
+type WebTimelineSectionProps = {
+  snapStart?: boolean;
+};
+
+const WebTimelineSection: React.FC<WebTimelineSectionProps> = ({ snapStart }) => {
   const data = [
     {
       title: "Ideation",
@@ -273,8 +277,8 @@ const WebTimelineSection: React.FC = () => {
   ];
 
   return (
-    <motion.div className="">
-      <Timeline data={data} />
+    <motion.div>
+      <Timeline data={data} snapStart={snapStart} />
     </motion.div>
   );
 };

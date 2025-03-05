@@ -4,8 +4,9 @@ import { cn } from "@/lib/utils";
 import { FaPython, FaVuejs } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiBun, SiCss3, SiDart, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiNestjs, SiNextdotjs, SiReact, SiTypescript } from "react-icons/si";
+import { SiBootstrap, SiBun, SiCss3, SiDart, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiNestjs, SiNextdotjs, SiNumpy, SiPhp, SiPython, SiReact, SiTypescript } from "react-icons/si";
 import Team from "../team/Team";
+import { RiJavaLine } from "react-icons/ri";
 
 const TeamSection: React.FC = () => {
   return (
@@ -44,6 +45,30 @@ const teams = [
       {
         name: "TailwindCss",
         icon: <RiTailwindCssFill className={cn(baseStyleIcon, "hover:text-sky-400")} key={8} />,
+      },
+      {
+        name: "Python",
+        icon: <SiPython className={cn(baseStyleIcon, "hover:text-sky-400")} key={8} />,
+      },
+      {
+        name: "Numpy",
+        icon: <SiNumpy className={cn(baseStyleIcon, "hover:text-sky-400")} key={8} />,
+      },
+      {
+        name: "Java",
+        icon: <RiJavaLine className={cn(baseStyleIcon, "hover:text-red-600")} key={8} />,
+      },
+      {
+        name: "PHP",
+        icon: <SiPhp className={cn(baseStyleIcon, "hover:text-[#474a8a")} key={8} />,
+      },
+      {
+        name: "Laravel",
+        icon: <SiLaravel className={cn(baseStyleIcon, "hover:text-red-600")} key={8} />,
+      },
+      {
+        name: "Bootstrap",
+        icon: <SiBootstrap className={cn(baseStyleIcon, "hover:text-violet-700")} key={8} />,
       },
     ],
     gltf: "/glb/Maulana.glb",

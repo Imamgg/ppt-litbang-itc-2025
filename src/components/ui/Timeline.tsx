@@ -1,6 +1,7 @@
 "use client";
 
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
+import { cn } from "@/lib/utils";
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 
@@ -9,7 +10,7 @@ interface TimelineEntry {
   content: React.ReactNode;
 }
 
-const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+const Timeline = ({ data, snapStart = false }: { data: TimelineEntry[], snapStart?: boolean }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -30,7 +31,7 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="snap-start w-full bg-white dark:bg-neutral-950 font-sans md:px-10" ref={containerRef}>
+    <div className={cn("w-full bg-white dark:bg-neutral-950 font-sans md:px-10", snapStart ? "snap-start" : "")} ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">Timeline Structure of Web Development</h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">Berikut adalah timeline struktur dari web development</p>
