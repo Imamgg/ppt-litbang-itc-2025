@@ -66,7 +66,7 @@ const DivisiSection: React.FC = () => {
         <Terminal>
           {isInView && (
             <>
-              <TypingAnimation>&gt; npm i fungsi</TypingAnimation>
+              <TypingAnimation>&gt; npm i Rules</TypingAnimation>
               <AnimatedSpan delay={3500} className="text-green-500">
                 <span>Setiap anggota Litbang setidaknya dan maksimal 1</span>
               </AnimatedSpan>
@@ -79,7 +79,7 @@ const DivisiSection: React.FC = () => {
               <AnimatedSpan delay={5000} className="text-green-500">
                 <span>minat dari anggota Litbang)</span>
               </AnimatedSpan>
-              <TypingAnimation delay={5500}>Success install fungsi</TypingAnimation>
+              <TypingAnimation delay={5500}>Success install Rules</TypingAnimation>
             </>
           )}
         </Terminal>

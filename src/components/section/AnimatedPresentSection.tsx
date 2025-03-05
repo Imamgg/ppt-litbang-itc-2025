@@ -18,7 +18,7 @@ const AnimatedPresentSection: React.FC = () => {
   const emojisAnimation = [
     (emoji: string) => (
       <motion.span
-        animate={{
+        whileInView={{
           rotate: [0, 12, -12],
           transition: {
             duration: 0.3,
@@ -31,7 +31,7 @@ const AnimatedPresentSection: React.FC = () => {
     ),
     (emoji: string) => (
       <motion.span
-        animate={{
+        whileInView={{
           y: [5, 0, -5],
           rotateZ: [0, 360, 0],
           transition: {
@@ -45,7 +45,7 @@ const AnimatedPresentSection: React.FC = () => {
     ),
     (emoji: string) => (
       <motion.span
-        animate={{
+        whileInView={{
           y: [5, 0, -5],
           x: [0, -10, 10],
           transition: {
@@ -59,7 +59,7 @@ const AnimatedPresentSection: React.FC = () => {
     ),
     (emoji: string) => (
       <motion.span
-        animate={{
+        whileInView={{
           y: [5, 0, -5],
           rotateZ: [0, 360, 0],
           transition: {
@@ -73,7 +73,7 @@ const AnimatedPresentSection: React.FC = () => {
     ),
     (emoji: string) => (
       <motion.span
-        animate={{
+        whileInView={{
           y: [5, 0, -5],
           rotateZ: [0, 360, 0],
           transition: {
@@ -87,7 +87,7 @@ const AnimatedPresentSection: React.FC = () => {
     ),
     (emoji: string) => (
       <motion.span
-        animate={{
+        whileInView={{
           y: [5, 0, -5],
           x: [0, -10, 10],
           transition: {
@@ -101,7 +101,7 @@ const AnimatedPresentSection: React.FC = () => {
     ),
     (emoji: string) => (
       <motion.span
-        animate={{
+        whileInView={{
           y: [5, 0, -5],
           rotateZ: [0, 360, 0],
           transition: {
