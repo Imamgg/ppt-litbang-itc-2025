@@ -1,7 +1,6 @@
 "use client";
 
 import { GlowingEffect } from "@/components/ui/GlowingEffect";
-import { useEffect, useState } from "react";
 
 interface IntroductionSectionData {
   icon: React.ReactNode;
@@ -12,7 +11,7 @@ interface IntroductionSectionData {
 
 export const IntroductionSection = ({ data }: { data: IntroductionSectionData[] }) => {
   return (
-    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2 h-screen px-10 mb-20 bg-black">
+    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2 h-screen px-10 mb-20">
       <GridItem area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]" icon={data[0]["icon"]} title={data[0]["title"]} description={data[0]["description"]} />
 
       <GridItem area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]" icon={data[1]["icon"]} title={data[1]["title"]} description={data[1]["description"]} />
