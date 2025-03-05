@@ -23,7 +23,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           🌐
         </motion.span>
       </motion.div>
-      <motion.div id="banner-2" className="min-h-screen bg-white z-10 border-x-2 border-black fixed top-0 left-1/4 w-1/4 flex justify-center items-center text-6xl z-50">
+      <motion.div id="banner-2" className="min-h-screen bg-white border-x-2 border-black fixed top-0 left-1/4 w-1/4 flex justify-center items-center text-6xl z-50">
         <motion.span
           whileInView={{
             y: [50, -50, 0],
@@ -38,7 +38,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           🎮
         </motion.span>
       </motion.div>
-      <motion.div id="banner-3" className="min-h-screen bg-white z-10 border-x-2 border-black fixed top-0 left-2/4 w-1/4 flex justify-center items-center text-6xl z-50">
+      <motion.div id="banner-3" className="min-h-screen bg-white border-x-2 border-black fixed top-0 left-2/4 w-1/4 flex justify-center items-center text-6xl z-50">
         <motion.span
           whileInView={{
             rotateY: [90, 0],
@@ -52,7 +52,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           💻
         </motion.span>
       </motion.div>
-      <motion.div id="banner-4" className="min-h-screen bg-white z-10 border-x-2 border-black fixed top-0 left-3/4 w-1/4 flex justify-center items-center text-6xl z-50">
+      <motion.div id="banner-4" className="min-h-screen bg-white border-x-2 border-black fixed top-0 left-3/4 w-1/4 flex justify-center items-center text-6xl z-50">
         <motion.span
           whileInView={{
             rotateZ: 360,

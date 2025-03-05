@@ -19,7 +19,7 @@ const AnimatedPresentSection: React.FC = () => {
     (emoji: string) => (
       <motion.span
         whileInView={{
-          rotate: [0, 12, -12],
+          rotate: [12, -12],
           transition: {
             duration: 0.3,
             ...SpringTransition,
@@ -32,8 +32,8 @@ const AnimatedPresentSection: React.FC = () => {
     (emoji: string) => (
       <motion.span
         whileInView={{
-          y: [5, 0, -5],
-          rotateZ: [0, 360, 0],
+          y: [5, -5],
+          rotateZ: [360, 0],
           transition: {
             duration: 0.3,
             ...SpringTransition,
@@ -46,8 +46,8 @@ const AnimatedPresentSection: React.FC = () => {
     (emoji: string) => (
       <motion.span
         whileInView={{
-          y: [5, 0, -5],
-          x: [0, -10, 10],
+          y: [5, -5],
+          x: [-10, 10],
           transition: {
             duration: 0.3,
             ...SpringTransition,
@@ -60,8 +60,8 @@ const AnimatedPresentSection: React.FC = () => {
     (emoji: string) => (
       <motion.span
         whileInView={{
-          y: [5, 0, -5],
-          rotateZ: [0, 360, 0],
+          y: [5, -5],
+          rotateZ: [360, 0],
           transition: {
             duration: 0.3,
             ...SpringTransition,
@@ -74,8 +74,8 @@ const AnimatedPresentSection: React.FC = () => {
     (emoji: string) => (
       <motion.span
         whileInView={{
-          y: [5, 0, -5],
-          rotateZ: [0, 360, 0],
+          y: [5, -5],
+          rotateZ: [360, 0],
           transition: {
             duration: 0.3,
             ...SpringTransition,
@@ -88,8 +88,8 @@ const AnimatedPresentSection: React.FC = () => {
     (emoji: string) => (
       <motion.span
         whileInView={{
-          y: [5, 0, -5],
-          x: [0, -10, 10],
+          y: [5, -5],
+          x: [-10, 10],
           transition: {
             duration: 0.3,
             ...SpringTransition,
@@ -102,8 +102,8 @@ const AnimatedPresentSection: React.FC = () => {
     (emoji: string) => (
       <motion.span
         whileInView={{
-          y: [5, 0, -5],
-          rotateZ: [0, 360, 0],
+          y: [5, -5],
+          rotateZ: [360, 0],
           transition: {
             duration: 0.3,
             ...SpringTransition,
