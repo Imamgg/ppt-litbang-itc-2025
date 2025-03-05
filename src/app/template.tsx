@@ -10,7 +10,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, []);
   return (
     <div className="z-50">
-      <motion.div id="banner-1" className="min-h-screen bg-white z-10 border-x-2 border-black fixed top-0 left-0 w-1/4 flex justify-center items-center text-6xl z-50">
+      <motion.div id="banner-1" className="min-h-screen bg-white border-x-2 border-black fixed top-0 left-0 w-1/4 flex justify-center items-center text-6xl z-50">
         <motion.span
           whileInView={{
             rotateZ: 360,

@@ -1,10 +1,12 @@
+import DaftarWeb from "@/components/section/DaftarWeb";
 import { IntroductionSection } from "@/components/section/IntroductionSection";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
 import { Lock } from "lucide-react";
 
 export default function WebsitePage() {
   return (
-    <section className="w-full my-28">
+    <section className="w-full py-20">
+      <DaftarWeb />
       <IntroductionSection data={dataWebsiteITC} />
       <IntroductionSection data={dataWebsiteTecno} />
       <WebTimelineSection />
