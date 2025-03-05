@@ -35,14 +35,14 @@ const dataWebsiteITC = [
                   21 hari membahas fitur dan teknologi yang digunakan
                   2 bulan pembelajaran teknologi
                   2 bulan eksekusi
-                  9 hari testing
-    `,
+                  9 hari testing`,
+    isList: true,
   },
   {
     icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Anggaran",
     description: "Rp 0",
-  }
+  },
 ];
 
 const dataWebsiteTecno = [
@@ -68,12 +68,12 @@ const dataWebsiteTecno = [
                   21 hari membahas fitur dan teknologi yang digunakan
                   2 bulan pembelajaran teknologi
                   2 bulan eksekusi
-                  9 hari testing
-    `,
+                  9 hari testing`,
+    isList: true,
   },
   {
     icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Anggaran",
     description: "Rp 0",
-  }
+  },
 ];
