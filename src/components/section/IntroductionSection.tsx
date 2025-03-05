@@ -1,7 +1,6 @@
 "use client";
 
 import { GlowingEffect } from "@/components/ui/GlowingEffect";
-import { useEffect, useState } from "react";
 
 interface IntroductionSectionData {
   icon: React.ReactNode;
