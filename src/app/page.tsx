@@ -1,12 +1,12 @@
 "use client";
 
 import TeamSection from "@/components/section/TeamSection";
-import WebTimelineSection from "@/components/section/WebTimelineSection";
 import VelocityScroll from "@/components/registry/magicui/VelocityScroll";
 import { IconCloud } from "@/components/registry/magicui/IconCloud";
 import { ProkerSection } from "@/components/section/ProkerSection";
 import AnimatedPresentSection from "@/components/section/AnimatedPresentSection";
 import DivisiSection from "@/components/section/DivisiSection";
+import FlowingMenu from "@/components/ui/FlowingMenu";
 
 const slugs: string[] = [
   "typescript",
@@ -42,8 +42,6 @@ const slugs: string[] = [
 ];
 
 export default function HomePage() {
-
-
   const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`);
 
   return (
@@ -63,6 +61,16 @@ export default function HomePage() {
         <ProkerSection />
       </div>
       <TeamSection />
+      <div className="snap-start" style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center" }}>
+        <FlowingMenu items={items} />
+      </div>
     </div>
   );
 }
+
+const items = [
+  { link: '/website', text: 'Website', image: 'https://picsum.photos/600/400?random=1' },
+  { link: '/perlombaan', text: 'Perlombaan', image: 'https://picsum.photos/600/400?random=2' },
+  { link: '/fasilitator', text: 'Fasilitator', image: 'https://picsum.photos/600/400?random=3' },
+  { link: '/penelitian', text: 'Penelitian', image: 'https://picsum.photos/600/400?random=4' }
+];

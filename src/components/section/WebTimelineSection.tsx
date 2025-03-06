@@ -341,7 +341,7 @@ const WebTimelineSection: React.FC<WebTimelineSectionProps> = ({ snapStart }) =>
   ];
 
   return (
-    <motion.div>
+    <motion.div className="snap-start">
       <Timeline data={data} snapStart={snapStart} />
     </motion.div>
   );

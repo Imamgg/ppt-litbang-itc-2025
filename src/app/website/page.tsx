@@ -1,39 +1,50 @@
 import DaftarWeb from "@/components/section/DaftarWeb";
 import { IntroductionSection } from "@/components/section/IntroductionSection";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
-import { Lock } from "lucide-react";
+import FlowingMenu from "@/components/ui/FlowingMenu";
+import { BookOpen, Calendar, PiggyBank, Target, Users } from "lucide-react";
 
 export default function WebsitePage() {
   return (
-    <section className="w-full py-20">
+    <section className="w-full pt-20 snap-y snap-mandatory">
       <DaftarWeb />
       <IntroductionSection data={dataWebsiteITC} />
       <IntroductionSection data={dataWebsiteTecno} />
       <WebTimelineSection />
+      <div className="snap-start" style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center" }}>
+        <FlowingMenu items={items} />
+      </div>
     </section>
   );
 }
 
+const items = [
+  { link: '/', text: 'Home', image: 'https://picsum.photos/600/400?random=1' },
+  { link: '/perlombaan', text: 'Perlombaan', image: 'https://picsum.photos/600/400?random=2' },
+  { link: '/fasilitator', text: 'Fasilitator', image: 'https://picsum.photos/600/400?random=3' },
+  { link: '/penelitian', text: 'Penelitian', image: 'https://picsum.photos/600/400?random=4' }
+];
+
 const dataWebsiteITC = [
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Pengertian",
     description:
       "Pengembangan Website ITC berupa web interaktif, modern dan memiliki banyak fitur, sebagai identitas UKMFT-ITC di dunia internet",
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
-    title: "Output",
+    icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
+    title: ["Output", "Sasaran"],
     description:
-      "UKMFT-ITC mempunyai website yang modern, interaktif, dan responsif",
+      ["UKMFT-ITC mempunyai website yang modern, interaktif, dan responsif", "Umum"],
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Penanggung Jawab",
     description: "Ahmad Mufid Risqi",
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Timeline",
     description: `April - Agustus
                   21 hari membahas fitur dan teknologi yang digunakan
@@ -43,7 +54,7 @@ const dataWebsiteITC = [
     isList: true,
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Anggaran",
     description: "Rp 1.000.000.000",
   },
@@ -51,24 +62,24 @@ const dataWebsiteITC = [
 
 const dataWebsiteTecno = [
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Pengertian",
     description:
       "Pengembangan Website TECHNOTAIMENT berupa web interaktif, modern dan memiliki  fitur untuk mempermudah akses pendaftaran perlombaan",
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
-    title: "Output",
+    icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
+    title: ["Output", "Sasaran"],
     description:
-      "Proker TECHNOTAIMENT mempunyai website yang memudahkan peserta untuk daftar",
+      ["Proker TECHNOTAIMENT mempunyai website yang memudahkan peserta untuk daftar", "Umum"],
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Penanggung Jawab",
     description: "Ahmad Mufid Risqi",
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Timeline",
     description: `7 hari membahas fitur dan teknologi yang digunakan
                   7 hari pembelajaran teknologi
@@ -78,7 +89,7 @@ const dataWebsiteTecno = [
     isList: true,
   },
   {
-    icon: <Lock className="h-4 w-4 text-black dark:text-neutral-400" />,
+    icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Anggaran",
     description: "Rp 1.000.000.000",
   },
