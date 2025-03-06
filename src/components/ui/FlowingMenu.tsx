@@ -2,6 +2,8 @@
 
 import React from "react";
 import { gsap } from "gsap";
+import { usePathname, useRouter } from "next/navigation";
+import { animatePageOut } from "@/utils/Animations";
 
 interface MenuItemProps {
   link: string;
@@ -31,6 +33,15 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
 
   const animationDefaults = { duration: 0.6, ease: "expo" };
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleClick = (href: string) => {
+    if (pathname !== href) {
+      animatePageOut(href, router);
+    }
+  };
 
   const findClosestEdge = (
     mouseX: number,
@@ -99,8 +110,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
       ref={itemRef}
     >
       <a
-        className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060606] focus:text-white focus-visible:text-[#060606]"
-        href={link}
+        className="flex items-center justify-center h-full relative uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060606] focus:text-white focus-visible:text-[#060606] custom-cursor"
+        onClick={() => handleClick(link)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

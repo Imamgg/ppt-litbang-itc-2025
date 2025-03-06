@@ -2,6 +2,7 @@ import DaftarWeb from "@/components/section/DaftarWeb";
 import { IntroductionSection } from "@/components/section/IntroductionSection";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
 import FlowingMenu from "@/components/ui/FlowingMenu";
+import { Table } from "@radix-ui/themes";
 import { BookOpen, Calendar, PiggyBank, Target, Users } from "lucide-react";
 
 export default function WebsitePage() {
@@ -19,24 +20,22 @@ export default function WebsitePage() {
 }
 
 const items = [
-  { link: '/', text: 'Home', image: 'https://picsum.photos/600/400?random=1' },
-  { link: '/perlombaan', text: 'Perlombaan', image: 'https://picsum.photos/600/400?random=2' },
-  { link: '/fasilitator', text: 'Fasilitator', image: 'https://picsum.photos/600/400?random=3' },
-  { link: '/penelitian', text: 'Penelitian', image: 'https://picsum.photos/600/400?random=4' }
+  { link: "/", text: "Home", image: "https://picsum.photos/600/400?random=1" },
+  { link: "/perlombaan", text: "Perlombaan", image: "https://picsum.photos/600/400?random=2" },
+  { link: "/fasilitator", text: "Fasilitator", image: "https://picsum.photos/600/400?random=3" },
+  { link: "/penelitian", text: "Penelitian", image: "https://picsum.photos/600/400?random=4" },
 ];
 
 const dataWebsiteITC = [
   {
     icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Pengertian",
-    description:
-      "Pengembangan Website ITC berupa web interaktif, modern dan memiliki banyak fitur, sebagai identitas UKMFT-ITC di dunia internet",
+    description: "Pengembangan Website ITC berupa web interaktif, modern dan memiliki banyak fitur, sebagai identitas UKMFT-ITC di dunia internet",
   },
   {
     icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: ["Output", "Sasaran"],
-    description:
-      ["UKMFT-ITC mempunyai website yang modern, interaktif, dan responsif", "Umum"],
+    description: ["UKMFT-ITC mempunyai website yang modern, interaktif, dan responsif", "Umum"],
   },
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -56,7 +55,38 @@ const dataWebsiteITC = [
   {
     icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Anggaran",
-    description: "Rp 1.000.000.000",
+    isTable: true,
+    tableData: (
+      <Table.Root variant="surface">
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+          </Table.Row>
+        </Table.Header>
+
+        <Table.Body>
+          <Table.Row>
+            <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
+            <Table.Cell>danilo@example.com</Table.Cell>
+            <Table.Cell>Developer</Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
+            <Table.Cell>zahra@example.com</Table.Cell>
+            <Table.Cell>Admin</Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
+            <Table.Cell>jasper@example.com</Table.Cell>
+            <Table.Cell>Developer</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
+    ),
   },
 ];
 
@@ -64,14 +94,12 @@ const dataWebsiteTecno = [
   {
     icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Pengertian",
-    description:
-      "Pengembangan Website TECHNOTAIMENT berupa web interaktif, modern dan memiliki  fitur untuk mempermudah akses pendaftaran perlombaan",
+    description: "Pengembangan Website TECHNOTAIMENT berupa web interaktif, modern dan memiliki  fitur untuk mempermudah akses pendaftaran perlombaan",
   },
   {
     icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: ["Output", "Sasaran"],
-    description:
-      ["Proker TECHNOTAIMENT mempunyai website yang memudahkan peserta untuk daftar", "Umum"],
+    description: ["Proker TECHNOTAIMENT mempunyai website yang memudahkan peserta untuk daftar", "Umum"],
   },
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -91,6 +119,37 @@ const dataWebsiteTecno = [
   {
     icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Anggaran",
-    description: "Rp 1.000.000.000",
+    isTable: true,
+    tableData: (
+      <Table.Root variant="surface">
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+          </Table.Row>
+        </Table.Header>
+
+        <Table.Body>
+          <Table.Row>
+            <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
+            <Table.Cell>danilo@example.com</Table.Cell>
+            <Table.Cell>Developer</Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
+            <Table.Cell>zahra@example.com</Table.Cell>
+            <Table.Cell>Admin</Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
+            <Table.Cell>jasper@example.com</Table.Cell>
+            <Table.Cell>Developer</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
+    ),
   },
 ];

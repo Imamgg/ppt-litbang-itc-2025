@@ -1,5 +1,6 @@
 import { IntroductionSection } from "@/components/section/IntroductionSection";
 import FlowingMenu from "@/components/ui/FlowingMenu";
+import { Table } from "@radix-ui/themes";
 import { Users, Target, Calendar, PiggyBank, BookOpen } from "lucide-react";
 
 export default function FasilitatorPage() {
@@ -44,6 +45,37 @@ const dataFasilitator = [
   {
     icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Anggaran",
-    description: "Rp 1.000.000.000",
+    isTable: true,
+        tableData: (
+          <Table.Root variant="surface">
+            <Table.Header>
+              <Table.Row>
+                <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
+                <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
+                <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+              </Table.Row>
+            </Table.Header>
+    
+            <Table.Body>
+              <Table.Row>
+                <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
+                <Table.Cell>danilo@example.com</Table.Cell>
+                <Table.Cell>Developer</Table.Cell>
+              </Table.Row>
+    
+              <Table.Row>
+                <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
+                <Table.Cell>zahra@example.com</Table.Cell>
+                <Table.Cell>Admin</Table.Cell>
+              </Table.Row>
+    
+              <Table.Row>
+                <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
+                <Table.Cell>jasper@example.com</Table.Cell>
+                <Table.Cell>Developer</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table.Root>
+        ),
   },
 ];
