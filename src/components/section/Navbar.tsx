@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TransitionLink from "./TransitionLink";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
@@ -21,11 +20,11 @@ const Navbar: React.FC = () => {
     }
   });
 
-  useIsomorphicLayoutEffect(() => {
+  useMotionValueEvent(scrollY, "renderRequest", () => {
     if (pathname === "/thanks") {
       setIsScroll(true);
     }
-  }, []);
+  })
 
   return (
     <nav
