@@ -56,12 +56,12 @@ const GridItem = ({ area, icon, title, description, isList = false, isTable = fa
             <div className="space-y-3">
               {title && <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-black dark:text-white">{typeof title == "string" ? title : title[0]}</h3>}
               {!isList ? (
-                description && <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-base/[1.375rem]  text-black dark:text-neutral-400">{typeof description == "string" ? description : description[0]}</h2>
+                description && <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-[1.2rem]/[1.375rem]  text-black dark:text-neutral-400">{typeof description == "string" ? description : description[0]}</h2>
               ) : (
                 <ul>
                   {typeof description == "string" &&
                     description.split("\n").map((item, index) => (
-                      <li key={index} className="list-disc font-sans text-sm/[1.125rem] md:text-base/[1.375rem] text-black dark:text-neutral-400">
+                      <li key={index} className="list-disc font-sans text-sm/[1.125rem] md:text-[1.2rem]/[1.375rem] text-black dark:text-neutral-400">
                         {item}
                       </li>
                     ))}
@@ -70,7 +70,7 @@ const GridItem = ({ area, icon, title, description, isList = false, isTable = fa
               {typeof title == "object" && typeof description == "object" && (
                 <>
                   <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-black dark:text-white">{title[1]}</h3>
-                  <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-base/[1.375rem]  text-black dark:text-neutral-400">{description[1] ?? ""}</h2>
+                  <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-[1.2rem] text-black dark:text-neutral-400">{description[1] ?? ""}</h2>
                 </>
               )}
               {isTable && tableData && tableData}

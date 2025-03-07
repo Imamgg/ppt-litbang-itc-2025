@@ -24,8 +24,8 @@ const items = [
 const dataFasilitator = [
   {
     icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
-    title: "Pengertian",
-    description: "Litbang berposisi sebagai fasilitator untuk keberhasilan dari keberlangsungan acara dari study club itu sendiri",
+    title: "Fasilitator Study Club",
+    description: "Litbang berposisi sebagai fasilitator seperti pembuatan quiz, classroom, kurikulum dan pencarian pemateri untuk keberhasilan dari keberlangsungan acara dari study club itu sendiri",
   },
   {
     icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -44,35 +44,18 @@ const dataFasilitator = [
   },
   {
     icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
-    title: "Anggaran",
+    title: "404",
     isTable: true,
         tableData: (
           <Table.Root variant="surface">
             <Table.Header>
               <Table.Row>
-                <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
-                <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-                <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+                <Table.ColumnHeaderCell>Not Found</Table.ColumnHeaderCell>
               </Table.Row>
             </Table.Header>
-    
             <Table.Body>
               <Table.Row>
-                <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
-                <Table.Cell>danilo@example.com</Table.Cell>
-                <Table.Cell>Developer</Table.Cell>
-              </Table.Row>
-    
-              <Table.Row>
-                <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
-                <Table.Cell>zahra@example.com</Table.Cell>
-                <Table.Cell>Admin</Table.Cell>
-              </Table.Row>
-    
-              <Table.Row>
-                <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
-                <Table.Cell>jasper@example.com</Table.Cell>
-                <Table.Cell>Developer</Table.Cell>
+                <Table.RowHeaderCell>Anggaran in this page not found</Table.RowHeaderCell>
               </Table.Row>
             </Table.Body>
           </Table.Root>
