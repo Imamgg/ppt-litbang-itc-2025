@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { FaPython, FaVuejs } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiBootstrap, SiBun, SiCss3, SiDart, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiNestjs, SiNextdotjs, SiNumpy, SiPhp, SiPython, SiReact, SiTypescript } from "react-icons/si";
+import { SiBootstrap, SiBun, SiCss3, SiDart, SiDeno, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiMongodb, SiMysql, SiNestjs, SiNextdotjs, SiNumpy, SiPhp, SiPython, SiReact, SiSvelte, SiTailwindcss, SiTypescript } from "react-icons/si";
 import Team from "../team/Team";
 import { RiJavaLine } from "react-icons/ri";
 
@@ -69,6 +69,14 @@ const teams = [
       {
         name: "Bootstrap",
         icon: <SiBootstrap className={cn(baseStyleIcon, "hover:text-violet-700")} key={8} />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb className={cn(baseStyleIcon, "hover:text-green-700")} key={8} />,
+      },
+      {
+        name: "MySQL",
+        icon: <SiMysql className={cn(baseStyleIcon, "hover:text-blue-700")} key={8} />,
       },
     ],
     gltf: "/glb/Maulana.glb",
@@ -155,6 +163,22 @@ const teams = [
       {
         name: "Laravel",
         icon: <SiLaravel className={cn(baseStyleIcon, "hover:text-red-500")} key={10} />,
+      },
+      {
+        name: "Svelte",
+        icon: <SiSvelte className={cn(baseStyleIcon, "hover:text-red-500")} key={10} />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb className={cn(baseStyleIcon, "hover:text-green-500")} key={10} />,
+      },
+      {
+        name: "Deno",
+        icon: <SiDeno className={cn(baseStyleIcon, "hover:text-white-500")} key={10} />,
+      },
+      {
+        name: "Tailwind",
+        icon: <SiTailwindcss className={cn(baseStyleIcon, "hover:text-blue-500")} key={10} />,
       },
     ],
     gltf: "/glb/Wildan.glb",
