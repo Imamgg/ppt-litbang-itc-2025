@@ -11,6 +11,7 @@ export default function WebsitePage() {
       <DaftarWeb />
       <IntroductionSection data={dataWebsiteITC} />
       <IntroductionSection data={dataWebsiteTecno} />
+      <IntroductionSection data={dataWebsiteEcommerce} />
       <WebTimelineSection />
       <div className="snap-start" style={{ height: "100vh", position: "relative", display: "flex", alignItems: "center" }}>
         <FlowingMenu items={items} />
@@ -29,13 +30,13 @@ const items = [
 const dataWebsiteITC = [
   {
     icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
-    title: "Pengertian",
-    description: "Pengembangan Website ITC berupa web interaktif, modern dan memiliki banyak fitur, sebagai identitas UKMFT-ITC di dunia internet",
+    title: "Website UKMFT-ITC",
+    description: "Pengembangan Website ITC berupa web interaktif, modern dan memiliki banyak fitur. Web tersebut diharapkan bisa menjadi identitas UKMFT-ITC di dunia internet ",
   },
   {
     icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: ["Output", "Sasaran"],
-    description: ["UKMFT-ITC mempunyai website yang modern, interaktif, dan responsif", "Umum"],
+    description: ["UKMFT-ITC mempunyai website yang modern, interaktif, dan responsif serta bisa membawa UKMFT-ITC agar bisa lebih dikenal didunia internet", "Umum"],
   },
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -60,29 +61,18 @@ const dataWebsiteITC = [
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Nama Anggaran</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Nominal</Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
-
         <Table.Body>
           <Table.Row>
-            <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
-            <Table.Cell>danilo@example.com</Table.Cell>
-            <Table.Cell>Developer</Table.Cell>
+            <Table.RowHeaderCell>Hosting (1 Tahun)</Table.RowHeaderCell>
+            <Table.Cell>Rp531.000</Table.Cell>
           </Table.Row>
-
           <Table.Row>
-            <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
-            <Table.Cell>zahra@example.com</Table.Cell>
-            <Table.Cell>Admin</Table.Cell>
-          </Table.Row>
-
-          <Table.Row>
-            <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
-            <Table.Cell>jasper@example.com</Table.Cell>
-            <Table.Cell>Developer</Table.Cell>
+            <Table.RowHeaderCell>Total</Table.RowHeaderCell>
+            <Table.Cell>Rp531.000</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table.Root>
@@ -93,13 +83,13 @@ const dataWebsiteITC = [
 const dataWebsiteTecno = [
   {
     icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
-    title: "Pengertian",
-    description: "Pengembangan Website TECHNOTAIMENT berupa web interaktif, modern dan memiliki  fitur untuk mempermudah akses pendaftaran perlombaan",
+    title: "Website Technotaiment",
+    description: "Pengembangan Website TECHNOTAIMENT berupa web interaktif, modern dan memiliki fitur untuk mempermudah akses pendaftaran perlombaan serta bisa memperluas jangkauan audience lewat internet",
   },
   {
     icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: ["Output", "Sasaran"],
-    description: ["Proker TECHNOTAIMENT mempunyai website yang memudahkan peserta untuk daftar", "Umum"],
+    description: ["Proker TECHNOTAIMENT mempunyai website yang memudahkan peserta untuk menjangkau dan berpartisipasi", "Umum"],
   },
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -109,7 +99,8 @@ const dataWebsiteTecno = [
   {
     icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Timeline",
-    description: `7 hari membahas fitur dan teknologi yang digunakan
+    description: `Maret - April
+                  7 hari membahas fitur dan teknologi yang digunakan
                   7 hari pembelajaran teknologi
                   9 hari eksekusi
                   5 hari testing
@@ -124,29 +115,68 @@ const dataWebsiteTecno = [
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Nama Anggaran</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Nominal</Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
-
         <Table.Body>
           <Table.Row>
-            <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
-            <Table.Cell>danilo@example.com</Table.Cell>
-            <Table.Cell>Developer</Table.Cell>
+            <Table.RowHeaderCell>Hosting (2 Bulan)</Table.RowHeaderCell>
+            <Table.Cell>Rp25.000</Table.Cell>
           </Table.Row>
+        </Table.Body>
+      </Table.Root>
+    ),
+  },
+];
 
+const dataWebsiteEcommerce = [
+  {
+    icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
+    title: "Website E-Commerce",
+    description: "Pembuatan Website E-COMMERCE dengan fitur yang mempermudah pelanggan untuk navigasi dan melakukan pembelian produk dari UKMFT-ITC ",
+  },
+  {
+    icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
+    title: ["Output", "Sasaran"],
+    description: ["UKMFT-ITC mempunyai website penjualan yang bisa mempermudah UKMFT-ITC meningkatkan produktivitas dalam hal penjuala produk", "Umum"],
+  },
+  {
+    icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
+    title: "Penanggung Jawab",
+    description: "Ahmad Mufid Risqi",
+  },
+  {
+    icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
+    title: "Timeline",
+    description: `Agustus - Oktober
+                  7 hari membahas fitur dan
+                  teknologi yang digunakan
+                  14 hari pembelajaran teknologi
+                  33 hari eksekusi
+                  6 hari testing`,
+    isList: true,
+  },
+  {
+    icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
+    title: "Anggaran",
+    isTable: true,
+    tableData: (
+      <Table.Root variant="surface">
+        <Table.Header>
           <Table.Row>
-            <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
-            <Table.Cell>zahra@example.com</Table.Cell>
-            <Table.Cell>Admin</Table.Cell>
+            <Table.ColumnHeaderCell>Nama Anggaran</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Nominal</Table.ColumnHeaderCell>
           </Table.Row>
-
+        </Table.Header>
+        <Table.Body>
           <Table.Row>
-            <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
-            <Table.Cell>jasper@example.com</Table.Cell>
-            <Table.Cell>Developer</Table.Cell>
+            <Table.RowHeaderCell>Hosting</Table.RowHeaderCell>
+            <Table.Cell>Disatuin sama Web ITC</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Hosting</Table.RowHeaderCell>
+            <Table.Cell>Disatuin sama Web ITC</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table.Root>

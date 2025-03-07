@@ -24,13 +24,13 @@ const items = [
 const dataPenelitian = [
   {
     icon: <Users className="h-4 w-4 text-black dark:text-neutral-400" />,
-    title: "Pengertian",
-    description: "Litbang mengikuti perlombaan karya tulis ilmiah yang nantinya akan dipublikasi sebagai bentuk publikasi akademik guna mendorong inovasi dan pengembangan keilmuan di lingkungan mahasiswa.",
+    title: "Pengembangan Karya Tulis Ilmiah",
+    description: "Litbang mengikuti perlombaan karya tulis ilmiah yang nantinya akan dipublikasi sebagai bentuk publikasi akademik guna mendorong inovasi dan pengembangan kepenulisan dan keilmuan mahasiswa",
   },
   {
     icon: <Target className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: ["Output", "Sasaran"],
-    description: ["Publikasi karya tulis ilmiah, peningkatan budaya riset, dan pengembangan keterampilan menulis mahasiswa.", "Umum"],
+    description: ["Publikasi karya tulis ilmiah, peningkatan budaya riset, dan pengembangan keterampilan menulis mahasiswa", "Umum"],
   },
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -40,7 +40,12 @@ const dataPenelitian = [
   {
     icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Timeline",
-    description: "Selama satu periode kepengurusan UKMFT-ITC",
+    description: `Selama satu periode
+                  kepengurusan UKMFT-ITC
+                  Minggu 1-2 Pemilihan Topik & Riset Awal
+                  Minggu 3-5 Penulisan Draf Utama
+                  Minggu 6-7 Revisi & Penyempurnaan
+                  Minggu 8   Finalisasi & Pengumpulan`,
   },
   {
     icon: <PiggyBank className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -50,29 +55,23 @@ const dataPenelitian = [
           <Table.Root variant="surface">
             <Table.Header>
               <Table.Row>
-                <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
-                <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-                <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+                <Table.ColumnHeaderCell>Nama Anggaran</Table.ColumnHeaderCell>
+                <Table.ColumnHeaderCell>Nominal</Table.ColumnHeaderCell>
               </Table.Row>
             </Table.Header>
     
             <Table.Body>
               <Table.Row>
-                <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
-                <Table.Cell>danilo@example.com</Table.Cell>
-                <Table.Cell>Developer</Table.Cell>
+                <Table.RowHeaderCell>Biaya Daftar Lomba</Table.RowHeaderCell>
+                <Table.Cell>Rp120.000</Table.Cell>
               </Table.Row>
-    
               <Table.Row>
-                <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
-                <Table.Cell>zahra@example.com</Table.Cell>
-                <Table.Cell>Admin</Table.Cell>
+                <Table.RowHeaderCell>Biaya riset</Table.RowHeaderCell>
+                <Table.Cell>Menyesuaikan jenis lomba</Table.Cell>
               </Table.Row>
-    
               <Table.Row>
-                <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
-                <Table.Cell>jasper@example.com</Table.Cell>
-                <Table.Cell>Developer</Table.Cell>
+                <Table.RowHeaderCell>Total</Table.RowHeaderCell>
+                <Table.Cell>+Rp120.000</Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table.Root>
