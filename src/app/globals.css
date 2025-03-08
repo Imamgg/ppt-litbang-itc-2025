@@ -5,3 +5,9 @@
 html {
   scroll-snap-type: y mandatory;
 }
+
+@layer utilities {
+  .custom-cursor {
+    cursor: url('../../public/arrow-up-right.png') 10 10, auto;
+  }
+}

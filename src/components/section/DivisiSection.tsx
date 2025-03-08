@@ -38,11 +38,11 @@ const DivisiSection: React.FC = () => {
     <div ref={containerRef} className="w-full h-screen snap-start flex gap-20 items-center px-10">
       <div className="w-1/2 relative">
         <DynamicCurvedArrow variants={SvgVariants} animate={ctrls} direction="right" className="absolute -top-32 -right-16 -rotate-45" />
-        <span className="text-3xl absolute -top-32 -right-36">Fungsi</span>
+        <span className="text-3xl absolute -top-32 -right-56">Pengertian</span>
         <Terminal>
           {isInView && (
             <>
-              <TypingAnimation>&gt; npm i fungsi</TypingAnimation>
+              <TypingAnimation>&gt; npm i pengertian</TypingAnimation>
               <AnimatedSpan delay={3500} className="text-green-500">
                 <span>Litbang bertanggung jawab dalam pengembangan sumber daya manusia (SDM)</span>
               </AnimatedSpan>
@@ -55,7 +55,7 @@ const DivisiSection: React.FC = () => {
               <AnimatedSpan delay={5000} className="text-green-500">
                 <span>pengembangan yang bermanfaat bagi UKMFT-ITC</span>
               </AnimatedSpan>
-              <TypingAnimation delay={5500}>Success install fungsi</TypingAnimation>
+              <TypingAnimation delay={5500}>Success install pengertian</TypingAnimation>
             </>
           )}
         </Terminal>
@@ -68,16 +68,16 @@ const DivisiSection: React.FC = () => {
             <>
               <TypingAnimation>&gt; npm i Rules</TypingAnimation>
               <AnimatedSpan delay={3500} className="text-green-500">
-                <span>Setiap anggota Litbang setidaknya dan maksimal 1</span>
+                <span>Setiap anggota Litbang minimal dan maksimal 1</span>
               </AnimatedSpan>
               <AnimatedSpan delay={4000} className="text-green-500">
                 <span>orang yang dapat mengikuti proker dari divisi lain</span>
               </AnimatedSpan>
               <AnimatedSpan delay={4500} className="text-green-500">
-                <span>dari divisi lain (bisa lebih dari satu tergantung .</span>
+                <span>dari divisi lain (bisa lebih tergantung</span>
               </AnimatedSpan>
               <AnimatedSpan delay={5000} className="text-green-500">
-                <span>minat dari anggota Litbang)</span>
+                <span>kondisi kesibukan dari anggota)</span>
               </AnimatedSpan>
               <TypingAnimation delay={5500}>Success install Rules</TypingAnimation>
             </>

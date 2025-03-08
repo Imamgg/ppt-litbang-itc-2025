@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${poppins.className || "font-sans"} dark:bg-neutral-950 bg-white overflow-x-hidden`}>
         <Navbar />
         <Theme>{children}</Theme>
-        <SplashCursor />
+        <SplashCursor BACK_COLOR={{ r: 0, g: 0, b: 0 }} />
       </body>
     </html>
   );

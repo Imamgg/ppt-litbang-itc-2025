@@ -4,13 +4,6 @@ import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
-const SpringTransition = {
-  type: "spring",
-  damping: 10,
-  stiffness: 100,
-  repeat: Infinity,
-};
-
 const AnimatedPresentSection: React.FC = () => {
   const [isPresent, setIspresent] = useState<boolean>(true);
   const texts: string[] = ["Hello", "WEBSITE", "LOMBA", "PENELITIAN", "WEBSITE", "LOMBA", "PENELITIAN", "LITBANG"];
@@ -22,7 +15,6 @@ const AnimatedPresentSection: React.FC = () => {
           rotate: [12, -12],
           transition: {
             duration: 0.3,
-            ...SpringTransition,
           },
         }}
       >
@@ -36,7 +28,6 @@ const AnimatedPresentSection: React.FC = () => {
           rotateZ: [360, 0],
           transition: {
             duration: 0.3,
-            ...SpringTransition,
           },
         }}
       >
@@ -50,7 +41,6 @@ const AnimatedPresentSection: React.FC = () => {
           x: [-10, 10],
           transition: {
             duration: 0.3,
-            ...SpringTransition,
           },
         }}
       >
@@ -64,7 +54,6 @@ const AnimatedPresentSection: React.FC = () => {
           rotateZ: [360, 0],
           transition: {
             duration: 0.3,
-            ...SpringTransition,
           },
         }}
       >
@@ -78,7 +67,6 @@ const AnimatedPresentSection: React.FC = () => {
           rotateZ: [360, 0],
           transition: {
             duration: 0.3,
-            ...SpringTransition,
           },
         }}
       >
@@ -92,7 +80,6 @@ const AnimatedPresentSection: React.FC = () => {
           x: [-10, 10],
           transition: {
             duration: 0.3,
-            ...SpringTransition,
           },
         }}
       >
@@ -100,16 +87,7 @@ const AnimatedPresentSection: React.FC = () => {
       </motion.span>
     ),
     (emoji: string) => (
-      <motion.span
-        whileInView={{
-          y: [5, -5],
-          rotateZ: [360, 0],
-          transition: {
-            duration: 0.3,
-            ...SpringTransition,
-          },
-        }}
-      >
+      <motion.span>
         {emoji}
       </motion.span>
     ),

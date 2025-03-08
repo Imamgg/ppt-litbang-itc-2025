@@ -186,21 +186,21 @@ export default function DaftarWeb() {
   const cards = [
     {
       title: "Website UKMFT-ITC",
-      subtitle: "Mental Model to Understand Flexbox",
+      subtitle: "Website UKMFT-ITC interaktif, responsive dan modern",
       position: { left: "15%", top: "15%", rotate: -5 },
       decorationType: "lines" as const,
       delay: 0,
     },
     {
       title: "Web Tecnotaiment",
-      subtitle: "Understanding Next.js Data Fetching",
+      subtitle: "Website web tecnotaiment interaktif, responsive dan modern",
       position: { left: "40%", top: "25%", rotate: 0 },
       decorationType: "circles" as const,
       delay: 200,
     },
     {
       title: "E-Commerce",
-      subtitle: "Thoughts and mental models about front-end development.",
+      subtitle: "Website e-commerce interaktif, responsive dan modern",
       position: { left: "65%", top: "15%", rotate: 5 },
       decorationType: "squares" as const,
       delay: 400,
@@ -208,7 +208,7 @@ export default function DaftarWeb() {
   ];
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen snap-start">
       {cards.map((card, index) => (
         <Card key={index} {...card} />
       ))}
