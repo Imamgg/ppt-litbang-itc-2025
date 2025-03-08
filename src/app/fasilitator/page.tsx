@@ -1,3 +1,4 @@
+import LanyardCard from "@/components/3D/LanyardCard";
 import { IntroductionSection } from "@/components/section/IntroductionSection";
 import FlowingMenu from "@/components/ui/FlowingMenu";
 import { Table } from "@radix-ui/themes";
@@ -35,7 +36,9 @@ const dataFasilitator = [
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Penanggung Jawab",
-    description: "Imam Syafii",
+    lanyard: (
+      <LanyardCard gltf="/glb/Imam.glb" position={[0, 0, 25]} fov={14} />
+    )
   },
   {
     icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,

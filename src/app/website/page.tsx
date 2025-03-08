@@ -1,3 +1,4 @@
+import LanyardCard from "@/components/3D/LanyardCard";
 import DaftarWeb from "@/components/section/DaftarWeb";
 import { IntroductionSection } from "@/components/section/IntroductionSection";
 import WebTimelineSection from "@/components/section/WebTimelineSection";
@@ -41,7 +42,9 @@ const dataWebsiteITC = [
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Penanggung Jawab",
-    description: "Ahmad Mufid Risqi",
+    lanyard: (
+      <LanyardCard gltf="/glb/Mufid.glb" position={[0, 0, 25]} fov={14} />
+    )
   },
   {
     icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -94,7 +97,9 @@ const dataWebsiteTecno = [
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Penanggung Jawab",
-    description: "Ahmad Mufid Risqi",
+    lanyard: (
+      <LanyardCard gltf="/glb/Mufid.glb" position={[0, 0, 25]} fov={14} />
+    )
   },
   {
     icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
@@ -144,7 +149,9 @@ const dataWebsiteEcommerce = [
   {
     icon: <BookOpen className="h-4 w-4 text-black dark:text-neutral-400" />,
     title: "Penanggung Jawab",
-    description: "Ahmad Mufid Risqi",
+    lanyard: (
+      <LanyardCard gltf="/glb/Mufid.glb" position={[0, 0, 25]} fov={14} />
+    )
   },
   {
     icon: <Calendar className="h-4 w-4 text-black dark:text-neutral-400" />,
