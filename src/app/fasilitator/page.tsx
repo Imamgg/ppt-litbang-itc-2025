@@ -5,6 +5,7 @@ export default function FasilitatorPage() {
   return (
     <section className="w-full min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900 py-28">
       <IntroductionSection data={dataFasilitator} />
+      <h1 className="text-3xl text-red-500 bg-yellow-200">TESTT</h1>
     </section>
   );
 }
