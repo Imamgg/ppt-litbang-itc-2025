@@ -16,9 +16,9 @@ useGLTF.preload("/glb/Fuad.glb");
 useGLTF.preload("/glb/Imam.glb");
 useTexture.preload("/litbang.jpg");
 
-export default function LanyardCard({ gltf = "/glb/Mufid.glb" }) {
+export default function LanyardCard({ gltf = "/glb/Mufid.glb", position = [0, 0, 15], fov = 20 }: { gltf?: string; position?: [number, number, number], fov?: number }) {
   return (
-    <Canvas camera={{ position: [0, 0, 15], fov: 20 }} style={{ height: 700 }}>
+    <Canvas camera={{ position: position, fov: fov }} style={{ height: 700 }}>
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band gltf={gltf} />

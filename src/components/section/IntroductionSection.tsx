@@ -9,6 +9,7 @@ interface IntroductionSectionData {
   isList?: boolean;
   isTable?: boolean;
   tableData?: React.ReactNode;
+  lanyard?: React.ReactNode;
 }
 
 export const IntroductionSection = ({ data }: { data: IntroductionSectionData[] }) => {
@@ -18,7 +19,7 @@ export const IntroductionSection = ({ data }: { data: IntroductionSectionData[] 
 
       <GridItem area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]" icon={data[1]["icon"]} title={data[1]["title"]} description={data[1]["description"]} />
 
-      <GridItem area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]" icon={data[2]["icon"]} title={data[2]["title"]} description={data[2]["description"]} />
+      <GridItem lanyard={data[2]["lanyard"]} area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]" icon={data[2]["icon"]} title={data[2]["title"]} description={data[2]["description"]} />
 
       <GridItem area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]" icon={data[3]["icon"]} title={data[3]["title"]} description={data[3]["description"]} isList={data[3]["isList"] ? true : false} />
 
@@ -43,9 +44,10 @@ interface GridItemProps {
   isList?: boolean;
   isTable?: boolean;
   tableData?: React.ReactNode;
+  lanyard?: React.ReactNode;
 }
 
-const GridItem = ({ area, icon, title, description, isList = false, isTable = false, tableData }: GridItemProps) => {
+const GridItem = ({ area, icon, title, description, isList = false, isTable = false, tableData, lanyard = null }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
       <div className="relative h-full rounded-2.5xl border p-2 md:rounded-3xl md:p-3">
@@ -74,6 +76,7 @@ const GridItem = ({ area, icon, title, description, isList = false, isTable = fa
                 </>
               )}
               {isTable && tableData && tableData}
+              {lanyard && lanyard}
             </div>
           </div>
         </div>
